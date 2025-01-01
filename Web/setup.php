@@ -96,7 +96,7 @@ class dynamicPage extends Smarty {
 $smarty = new dynamicPage;
 
 $msg = "";
-$validate = "";
+$validate = [];
 
 $smarty->assign("db", array("","","","",""));
 $smarty->assign("next",false);
