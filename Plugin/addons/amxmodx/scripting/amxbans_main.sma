@@ -114,6 +114,7 @@ public plugin_init()
 	pcvar_show_prebanned 	=	register_cvar("amxbans_show_prebanned","1")
 	pcvar_show_prebanned_num =	register_cvar("amxbans_show_prebanned_num","2")
 	pcvar_default_banreason	=	register_cvar("amxbans_default_ban_reason","unknown")
+	pcvar_prefix = get_cvar_pointer("amx_sql_prefix");
 	
 	register_concmd("amx_ban", "cmdBan", ADMIN_BAN, "<steamID or nickname or #authid or IP> <time in mins> <reason>")
 	register_srvcmd("amx_ban", "cmdBan", -1, "<steamID or nickname or #authid or IP> <time in mins> <reason>")
@@ -139,8 +140,7 @@ public plugin_init()
 	get_configsdir(configsDir, 63)
 	
 	server_cmd("exec %s/sql.cfg", configsDir)
-	server_exec("exec %s/amxbans.cfg", configsDir)
-	pcvar_prefix = get_cvar_pointer("amx_sql_prefix");
+	server_cmd("exec %s/amxbans.cfg", configsDir)
 	
 	//color_chat_init()
 }
