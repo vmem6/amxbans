@@ -1,0 +1,4 @@
+@media (scripting: enabled)
+{
+  .navbar__body { display: none; }
+}

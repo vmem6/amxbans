@@ -1,0 +1,116 @@
+@media only screen and (min-width: 1000px)
+{
+  /* [Navbar] */
+
+  .navbar { padding: 2.5rem 5rem; }
+  .navbar__content {
+    flex-direction: row;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* [Navbar > Header] */
+
+  .navbar__header {
+    padding: 0;
+    border-bottom: none;
+  }
+  .navbar__header__burger { display: none; }
+
+  /* [Navbar > Menu] */
+
+  .navbar__body
+  {
+    display: flex !important;
+    flex-direction: row;
+    border-bottom: none;
+  }
+  .navbar__body__item { align-self: initial; }
+
+  /* [Navbar > Body > Menu] */
+
+  .navbar__menu {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    justify-content: end;
+    border-bottom: none;
+  }
+  .navbar__menu__item {
+    position: relative;
+    display: block;
+    padding: 0;
+    overflow-x: hidden;
+    align-content: center;
+  }
+  .navbar__menu__item:not(:last-child) { margin-right: 2rem; }
+  .navbar__menu__item:hover,
+  .navbar__menu__item:focus {
+    color: inherit;
+    background: none;
+  }
+  .navbar__menu__item > *:first-child::after {
+    position: relative;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 0.1em;
+    display: block;
+    content: '';
+    background: #fff;
+    transition: left 300ms;
+  }
+  .navbar__menu__item:hover > *:first-child::after {
+    left: 0;
+  }
+  .navbar__menu__item > * { padding: 0 !important; }
+  .navbar__submenu
+  {
+    position: fixed;
+    display: block;
+    border-bottom: 2px solid #fff;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .navbar__menu__item:hover > .navbar__submenu { opacity: 1; }
+  .navbar__submenu__item,
+  .navbar__submenu__item:hover {
+    background: #000;
+  }
+  .navbar__submenu__item > *:first-child
+  {
+    padding: 1rem 2rem 1rem 0;
+    transition: padding 0.3s;
+  }
+  .navbar__submenu__item:hover > *:first-child { padding-left: 2rem; }
+  .navbar__submenu__item > *:first-child::before {
+    position: absolute;
+    left: -1em;
+    content: "\ea50";
+    font-family: boxicons;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .navbar__submenu__item:hover > *:first-child::before
+  {
+    left: -0.25em;
+    opacity: 1;
+  }
+
+  /* [Navbar > Body > Login] */
+
+  .navbar__body__login {
+    margin-left: 3rem;
+    padding: 0;
+  }
+  .user-menu {
+    position: relative;
+    max-width: min-content;
+  }
+  .user-menu > *:first-child { min-width: max-content; }
+  .user-submenu {
+    position: absolute;
+    width: 100%;
+    word-break: break-all;
+  }
+}
